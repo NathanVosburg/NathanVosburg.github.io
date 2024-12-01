@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&family=Syncopate:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+        <style>
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: black; /*linear-gradient(180deg, #ff6ec4, #7873f5);*/
+    min-height: 200vh;
+    color: white;
+    font-family: "VT323", sans-serif;
+    font-size: 25px;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 100px;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 100vh;
+    bottom: 0;
+    left: -50%;
+    background-image: 
+        linear-gradient(90deg, rgba(232, 10, 235, 0.5) 1px, transparent 1px), linear-gradient(0deg, rgba(232, 10, 235, .5) 1px, transparent 1px);
+    background-size: 50px 25px;
+    transform: perspective(500px) rotateX(70deg) translate3d(0, 0, 0);
+    transform-origin: center;
+    animation: scroll 30s linear infinite;
+    z-index: -2;
+    mask-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1) 20%,  
+        rgba(0, 0, 0, 0.8) 40%,
+        rgba(0, 0, 0, 0) 70%  
+        );
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+
+@keyframes scroll {
+    0% { background-position: 0 0 };
+    100% { background-position: 0 100% };
+}
+
+h1 {
+    animation: 3s float ease-in-out infinite;
+    text-shadow: 4px 4px #ff00ff;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+
+nav {
+    display: flex;
+    margin-top: -6rem;
+    justify-content: center;
+    gap: 20px;
+    font-size: 30px;
+}
+
+nav a {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    text-decoration:none;
+}
+
+nav a:hover {
+    color: #ff00ff;
+    text-shadow: 2px 2px #00ffff;
+}
+
+.glowing-box {
+    position: relative;
+    width: 100%;
+    max-width: 56rem;
+    margin-top: -3rem;
+    color: white;
+}
+
+.glowing-box-inner {
+    position: relative;
+    width: 92.85%;
+    min-height: 400px;
+    padding: 2rem;
+    background-color: rgba(88, 28, 135, 0.6);
+    backdrop-filter: blur(4px);
+    box-shadow:
+        inset 0 0 30px rgba(27, 219, 245, 0.2), 0 0 30px rgba(27, 219, 245, 0.5); 
+    animation: box-pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    overflow: hidden;
+}
+
+
+.glowing-box::before {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-color: #67E8F9;
+    border-style: solid;
+    border-width: 2px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    content: '';
+    bottom: -4px;
+    right: -4px;
+    border-left: 0;
+    border-top: 0;
+}
+
+
+.glowing-box::after {
+
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-color: #67E8F9;
+    border-style: solid;
+    border-width: 2px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    content: '';
+    top: -4px;
+    left: -4px;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.glowing-box .shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(128, 0, 255, 0) 0%,
+        rgba(128, 0, 255, 0) 35%,
+        rgba(128, 0, 255, 0.1) 45%,
+        rgba(128, 0, 255, 0.2) 50%,
+        rgba(128, 0, 255, 0.1) 55%,
+        rgba(128, 0, 255, 0) 65%,
+        rgba(128, 0, 255, 0) 100%
+        );
+    animation: shine 7s infinite;
+    overflow: hidden;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateY(-100%);
+    };
+    100% {
+        transform: translateY(100%);
+    };
+}
+
+@keyframes float {
+    0% {transform: translate(0px, 5px)};
+    50% {transform: translate(0px, 15px)};
+    100% {transform: translate(0px, 5px)};
+
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.9;
+    };
+    50% {
+        opacity: 0.7;
+    };
+}
+
+@keyframes box-pulse {
+    50% {
+        box-shadow: 
+            inset 0 0 30px rgba(103, 232, 249, 0.1),
+        0 0 50px rgba(103, 232, 249, 0.3);
+    };
+}
+
+/* Cyberpunk Glow */
+.cyber-glow {
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff,
+    0 0 40px #ff00ff;
+font-family: "Orbitron", sans-serif;
+letter-spacing: 2px;
+}
+
+
+      /* Retro Chrome */
+      .chrome-text {
+          position: relative;
+          background: linear-gradient(to bottom, #ff00ff 0%, #9933ff 50%, #00ffff 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          font-family: "Press Start 2P", sans-serif;
+          font-weight: bold;
+          letter-spacing: 3px;
+          white-space: nowrap;
+      }
+
+      .chrome-text::before {
+          content: attr(data-text);
+          position: absolute;
+          left: 2px;
+          top: 2px;
+          text-shadow: 1px 1px #ff00ff;
+          z-index: -1;
+      }
+
+        </style>
+    </head>
+    <body>
+        <h1>
+            NATHAN VOSBURG 
+
+        </h1>
+
+        <nav>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+        </nav>
+
+        <div id="about" class="anchor"></div>
+        <h2 class="chrome-text" data-text="ABOUT"> ABOUT </h2>
+        <div class="glowing-box">
+            <div class="glowing-box-inner">
+                <div class="shine"> </div>
+                <p>  I am me. idk what else to say </p>
+            </div>
+        </div>
+
+        <div id="projects" class="anchor"></div>
+        <h2 class="chrome-text" data-text="PROJECTS"> PROJECTS </h2>
+        <div class="glowing-box">
+            <div class="glowing-box-inner">
+                <div class="shine"> </div>
+                <img style="width: 100%" src="https://64.media.tumblr.com/9c482ecfcda309f629ac69168f2c22c2/tumblr_oh44bi2bp91vj2gx4o1_500.gif" alt="Description of the GIF">
+                <h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="Conversation">Conversation</h2><span class="chrome-text" style="margin: 0 20px" data-text="-">-</span><h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="CAD program">CAD program</h2>
+                <p style="margin-top: 0rem">  Conversation is a direct-modeling program. Unlike SolidWorks, Conversation's sketching is not constraint-based (just draw stuff and move stuff). Unlike SolidWorks, Conversation does not have a parametric feature tree (just basic undo/redo). </p>
+            </div>
+        </div>
+        <div class="glowing-box" style="margin-top: 2rem">
+            <div class="glowing-box-inner">
+                <div class="shine"> </div>
+                <img style="width: 100%" src="https://64.media.tumblr.com/9c482ecfcda309f629ac69168f2c22c2/tumblr_oh44bi2bp91vj2gx4o1_500.gif" alt="Description of the GIF">
+                <h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="Sol">Sol</h2><span class="chrome-text" style="margin: 0 20px" data-text="-">-</span><h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="event planning app">event planning app</h2>
+                <p style="margin-top: 0rem">  Sol is an event planning app allowing students to plan and discover events happening around their campus. The uses Flutter for the front-end, Go for the back-end, MongoDB for data storage, and a custom tile server for map visualization.</p>
+            </div>
+        </div>
+        <div class="glowing-box" style="margin-top: 2rem">
+            <div class="glowing-box-inner">
+                <div class="shine"> </div>
+                <img style="width: 100%" src="https://64.media.tumblr.com/9c482ecfcda309f629ac69168f2c22c2/tumblr_oh44bi2bp91vj2gx4o1_500.gif" alt="Description of the GIF">
+                <h2 class="chrome-text" style="font-size: 30px; " data-text="Decentralized Federated">Decentralized Federated</h2>
+                <h2 class="chrome-text" style="font-size: 30px; margin-top: -0.5rem" data-text="Learning Framework">Learning Framework</h2>
+                <p style="margin-top: 0rem">  The decentralized federated learning framework enables distributed model training without centralizing data. Built with Go and PyTorch, it uses gRPC for peer-to-peer communication, supports custom models and datasets, and implements federated averaging for model aggregation. The framework includes peer discovery, configurable training cycles, and demonstrates scalable collaborative learning through a CNN implementation. </p>
+            </div>
+        </div>
+        <div class="glowing-box" style="margin-top: 2rem">
+            <div class="glowing-box-inner">
+                <div class="shine"> </div>
+                <img style="width: 100%" src="https://64.media.tumblr.com/9c482ecfcda309f629ac69168f2c22c2/tumblr_oh44bi2bp91vj2gx4o1_500.gif" alt="Description of the GIF">
+                <h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="Vertex">Vertex</h2><span class="chrome-text" style="margin: 0 20px" data-text="-">-</span><h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="2D game engine">2D game engine</h2>
+                <p style="margin-top: 0rem">  Vertex is a custom 2D game engine built from the ground up in C++ and Objective-C, using native macOS graphics APIs for rendering. The engine features real-time collision detection, frame-synchronized game loop management, and a modular object system for handling game entities like turrets, projectiles, and obstacles. </p>
+            </div>
+        </div>
+    </body>
+</html>
+
