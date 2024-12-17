@@ -128,116 +128,50 @@ will-change: transform;
                                             overflow: hidden;
                                         }
 
-                                        /* Remove the complex animations and use simpler ones */
-
-                                        /*.glowing-box-inner {
-position: relative;
-width: 92.85%;
-min-height: 400px;
-padding: 2rem;
-background-color: rgba(88, 28, 135, 0.6);
-backdrop-filter: blur(4px);
-box-shadow:
-    inset 0 0 30px rgba(27, 219, 245, 0.2), 0 0 30px rgba(27, 219, 245, 0.5); 
-animation: box-pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-overflow: hidden;
-                                        }
-
-                                        .glowing-box {
-                                            position: relative;
-                                            width: 100%;
-                                            max-width: 56rem;
-                                            margin-top: -3rem;
-                                            color: white;
-                                        }
-
-                                        .shine {
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
-                                            width: 100%;
-                                            height: 100%;
-                                            background: linear-gradient(
-                                                to bottom,
-                                                transparent 0%,
-                                                rgba(128, 0, 255, 0.1) 50%,
-                                                transparent 100%
-                                                );
-                                            transform: translateY(-100%);
-                                            animation: shine 3s linear infinite;
-                                            pointer-events: none; 
-                                        }
-
-                                        @keyframes shine {
-                                            to {
-                                                transform: translateY(100%);
-                                            }
-                                        }
-                                        /*.glowing-box::before {
-position: absolute;
-width: 2rem;
-height: 2rem;
-border-color: #67E8F9;
-border-style: solid;
-border-width: 2px;
-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-content: '';
-bottom: -4px;
-right: -4px;
-border-left: 0;
-border-top: 0;
-                                        }
-
-
-                                        .glowing-box::after {
-
-                                            position: absolute;
-                                            width: 2rem;
-                                            height: 2rem;
-                                            border-color: #67E8F9;
-                                            border-style: solid;
-                                            border-width: 2px;
-                                            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                                            content: '';
-                                            top: -4px;
-                                            left: -4px;
-                                            border-right: 0;
-                                            border-bottom: 0;
-                                        }
-                                        */
-
                                         .glowing-box .shine {
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
-                                            width: 100%;
-                                            height: 100%;
-                                            background: linear-gradient(
-                                                rgba(128, 0, 255, 0) 0%,
-                                                rgba(128, 0, 255, 0) 35%,
-                                                rgba(128, 0, 255, 0.1) 45%,
-                                                rgba(128, 0, 255, 0.2) 50%,
-                                                rgba(128, 0, 255, 0.1) 55%,
-                                                rgba(128, 0, 255, 0) 65%,
-                                                rgba(128, 0, 255, 0) 100%
-                                                );
-                                            animation: shine 7s infinite;
-                                            overflow: hidden;
-                                            z-index: 1;
-                                        }
+    position: absolute;
+    top: -100%;  /* Start above the container */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(128, 0, 255, 0) 0%,
+        rgba(128, 0, 255, 0) 35%,
+        rgba(128, 0, 255, 0.1) 45%,
+        rgba(128, 0, 255, 0.2) 50%,
+        rgba(128, 0, 255, 0.1) 55%,
+        rgba(128, 0, 255, 0) 65%,
+        rgba(128, 0, 255, 0) 100%
+    );
+    animation: shine 7s infinite linear;  /* Added linear timing */
+    z-index: 1;
+    will-change: transform;  /* Optimize for animations */
+    -webkit-transform: translateY(0);  /* Initial transform state for Safari */
+    transform: translateY(0);
+}
 
-                                        .shine.disabled {
-                                            display: none;
-                                        }
+@keyframes shine {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(200%);  /* Move past the bottom */
+        transform: translateY(200%);
+    }
+}
 
-                                        @keyframes shine {
-                                            0% {
-                                                transform: translateY(-100%);
-                                            };
-                                            100% {
-                                                transform: translateY(100%);
-                                            };
-                                        }
+/* Explicitly add webkit prefixed keyframes */
+@-webkit-keyframes shine {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(200%);
+        transform: translateY(200%);
+    }
+}
 
                                         @-webkit-keyframes float {
                                             0% { -webkit-transform: translateY(0px); transform: translateY(0px); }
@@ -256,37 +190,7 @@ border-top: 0;
                                             animation: float 3s ease-in-out infinite;
                                         }
 
-                                        @keyframes pulse {
-                                            0%, 100% {
-                                                opacity: 0.9;
-                                            };
-                                            50% {
-                                                opacity: 0.7;
-                                            };
-                                        }
 
-                                        @keyframes box-pulse {
-                                            50% {
-                                                box-shadow: 
-                                                    inset 0 0 30px rgba(103, 232, 249, 0.1),
-                                                0 0 50px rgba(103, 232, 249, 0.3);
-                                            };
-                                        }
-
-                                        /* Cyberpunk Glow */
-                                        .cyber-glow {
-                                            color: #fff;
-                                            text-shadow: 0 0 5px #fff,
-                                            0 0 10px #fff,
-                                            0 0 20px #ff00ff,
-                                            0 0 30px #ff00ff,
-                                            0 0 40px #ff00ff;
-                                        font-family: "Orbitron", sans-serif;
-                                        letter-spacing: 2px;
-                                        }
-
-
-                                        /* Retro Chrome */
                                         .chrome-text {
                                             position: relative;
                                             background: linear-gradient(to bottom, #ff00ff 0%, #9933ff 50%, #00ffff 100%);
@@ -309,26 +213,6 @@ border-top: 0;
                                         }
 
         </style>
-        <script>
-            // Function to detect Safari
-            function isSafari() {
-                const ua = navigator.userAgent.toLowerCase();
-                return ua.includes('safari') && !ua.includes('chrome') && !ua.includes('firefox');
-            }
-
-            // Function to disable shine animation on Safari
-            function handleSafariAnimations() {
-                if (isSafari()) {
-                    const shineElements = document.querySelectorAll('.shine');
-                    shineElements.forEach(element => {
-                        element.classList.add('disabled');
-                    });
-                }
-            }
-
-            // Run when the DOM is loaded
-            document.addEventListener('DOMContentLoaded', handleSafariAnimations);
-        </script>
     </head>
     <body>
         <div class="grid-background"></div>
