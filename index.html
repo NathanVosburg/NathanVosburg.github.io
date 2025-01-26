@@ -57,160 +57,160 @@ mask-image: linear-gradient(
 will-change: transform;
 }
 
-                                                @keyframes scroll {
-                                                    to { background-position: 0 100%; }
-                                                }
+                                                        @keyframes scroll {
+                                                            to { background-position: 0 100%; }
+                                                        }
 
-                                                h1 {
-                                                    text-shadow: 4px 4px #ff00ff;
-                                                    margin-top: 1rem;
-                                                    text-align: center;
-                                                    font-size: 100px;
-                                                }
+                                                        h1 {
+                                                            text-shadow: 4px 4px #ff00ff;
+                                                            margin-top: 1rem;
+                                                            text-align: center;
+                                                            font-size: 100px;
+                                                        }
 
-                                                h2 {
-                                                    font-size: 50px;
-                                                }
-
-
-                                                nav {
-                                                    display: flex;
-                                                    margin-top: -6rem;
-                                                    justify-content: center;
-                                                    gap: 20px;
-                                                    font-size: 30px;
-                                                }
-
-                                                nav a {
-                                                    padding-left: 10px;
-                                                    padding-right: 10px;
-                                                    color: white;
-                                                    text-decoration:none;
-                                                }
-
-                                                nav a:hover {
-                                                    color: #ff00ff;
-                                                    text-shadow: 2px 2px #00ffff;
-                                                }
+                                                        h2 {
+                                                            font-size: 50px;
+                                                        }
 
 
-                                                .gif-style {
-                                                    display: block;
-                                                    width: 100%;
-                                                    max-width: 800px; 
-                                                    height: auto;
-                                                    margin: 0 auto;
-                                                    pointer-events: none; 
-                                                    z-index: 2;
-                                                }
+                                                        nav {
+                                                            display: flex;
+                                                            margin-top: -6rem;
+                                                            justify-content: center;
+                                                            gap: 20px;
+                                                            font-size: 30px;
+                                                        }
 
-                                                .video-container {
-                                                    width: 100%;
-                                                    max-width: 100%;
-                                                    margin: 0 auto;
-                                                    display: flex;
-                                                    justify-content: center;
-                                                    align-items: center;
-                                                    overflow: hidden;
-                                                    z-index: 2;
-                                                }
+                                                        nav a {
+                                                            padding-left: 10px;
+                                                            padding-right: 10px;
+                                                            color: white;
+                                                            text-decoration:none;
+                                                        }
 
-                                                .glowing-box {
-                                                    position: relative;
-                                                    width: 100%;
-                                                    max-width: 56rem;
-                                                    margin-top: -3rem;
-                                                    color: white;
-                                                    background-color: rgba(88, 28, 135, 0.3);
-                                                    padding: 2rem;
-                                                    /* Using box-shadow instead of multiple effects */
-                                                    box-shadow: 0 0 15px rgba(27, 219, 245, 0.3);
-                                                    overflow: hidden;
-                                                }
-
-                                                .glowing-box .shine {
-                                                    position: absolute;
-                                                    top: -100%;  /* Start above the container */
-                                                    left: 0;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    background: linear-gradient(
-                                                        rgba(128, 0, 255, 0) 0%,
-                                                        rgba(128, 0, 255, 0) 35%,
-                                                        rgba(128, 0, 255, 0.1) 45%,
-                                                        rgba(128, 0, 255, 0.2) 50%,
-                                                        rgba(128, 0, 255, 0.1) 55%,
-                                                        rgba(128, 0, 255, 0) 65%,
-                                                        rgba(128, 0, 255, 0) 100%
-                                                        );
-                                                    animation: shine 7s infinite linear;  /* Added linear timing */
-                                                    z-index: 1;
-                                                    will-change: transform;  /* Optimize for animations */
-                                                    -webkit-transform: translateY(0);  /* Initial transform state for Safari */
-                                                    transform: translateY(0);
-                                                }
-
-                                                @keyframes shine {
-                                                    0% {
-                                                        -webkit-transform: translateY(0);
-                                                        transform: translateY(0);
-                                                    }
-                                                    100% {
-                                                        -webkit-transform: translateY(200%);  /* Move past the bottom */
-                                                        transform: translateY(200%);
-                                                    }
-                                                }
-
-                                                /* Explicitly add webkit prefixed keyframes */
-                                                @-webkit-keyframes shine {
-                                                    0% {
-                                                        -webkit-transform: translateY(0);
-                                                        transform: translateY(0);
-                                                    }
-                                                    100% {
-                                                        -webkit-transform: translateY(200%);
-                                                        transform: translateY(200%);
-                                                    }
-                                                }
-
-                                                @-webkit-keyframes float {
-                                                    0% { -webkit-transform: translateY(0px); transform: translateY(0px); }
-                                                    50% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
-                                                    100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
-                                                }
-
-                                                @keyframes float {
-                                                    0% { -webkit-transform: translateY(0px); transform: translateY(0px); }
-                                                    50% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
-                                                    100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
-                                                }
-
-                                                .floating {
-                                                    -webkit-animation: float 3s ease-in-out infinite;
-                                                    animation: float 3s ease-in-out infinite;
-                                                }
+                                                        nav a:hover {
+                                                            color: #ff00ff;
+                                                            text-shadow: 2px 2px #00ffff;
+                                                        }
 
 
-                                                .chrome-text {
-                                                    position: relative;
-                                                    background: linear-gradient(to bottom, #ff00ff 0%, #9933ff 50%, #00ffff 100%);
-                                                    -webkit-background-clip: text;
-                                                    background-clip: text;
-                                                    color: transparent;
-                                                    font-family: "Press Start 2P", sans-serif;
-                                                    font-weight: bold;
-                                                    letter-spacing: 3px;
-                                                    white-space: nowrap;
-                                                }
+                                                        .gif-style {
+                                                            display: block;
+                                                            width: 100%;
+                                                            max-width: 800px; 
+                                                            height: auto;
+                                                            margin: 0 auto;
+                                                            pointer-events: none; 
+                                                            z-index: 2;
+                                                        }
 
-                                                .chrome-text::before {
-                                                    content: attr(data-text);
-                                                    position: absolute;
-                                                    left: 2px;
-                                                    top: 2px;
-                                                    text-shadow: 1px 1px #ff00ff;
-                                                    z-index: -1;
-                                                }
+                                                        .video-container {
+                                                            width: 100%;
+                                                            max-width: 100%;
+                                                            margin: 0 auto;
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            align-items: center;
+                                                            overflow: hidden;
+                                                            z-index: 2;
+                                                        }
+
+                                                        .glowing-box {
+                                                            position: relative;
+                                                            width: 100%;
+                                                            max-width: 56rem;
+                                                            margin-top: -3rem;
+                                                            color: white;
+                                                            background-color: rgba(88, 28, 135, 0.3);
+                                                            padding: 2rem;
+                                                            /* Using box-shadow instead of multiple effects */
+                                                            box-shadow: 0 0 15px rgba(27, 219, 245, 0.3);
+                                                            overflow: hidden;
+                                                        }
+
+                                                        .glowing-box .shine {
+                                                            position: absolute;
+                                                            top: -100%;  /* Start above the container */
+                                                            left: 0;
+                                                            width: 100%;
+                                                            height: 100%;
+                                                            background: linear-gradient(
+                                                                rgba(128, 0, 255, 0) 0%,
+                                                                rgba(128, 0, 255, 0) 35%,
+                                                                rgba(128, 0, 255, 0.1) 45%,
+                                                                rgba(128, 0, 255, 0.2) 50%,
+                                                                rgba(128, 0, 255, 0.1) 55%,
+                                                                rgba(128, 0, 255, 0) 65%,
+                                                                rgba(128, 0, 255, 0) 100%
+                                                                );
+                                                            animation: shine 7s infinite linear;  /* Added linear timing */
+                                                            z-index: 1;
+                                                            will-change: transform;  /* Optimize for animations */
+                                                            -webkit-transform: translateY(0);  /* Initial transform state for Safari */
+                                                            transform: translateY(0);
+                                                        }
+
+                                                        @keyframes shine {
+                                                            0% {
+                                                                -webkit-transform: translateY(0);
+                                                                transform: translateY(0);
+                                                            }
+                                                            100% {
+                                                                -webkit-transform: translateY(200%);  /* Move past the bottom */
+                                                                transform: translateY(200%);
+                                                            }
+                                                        }
+
+                                                        /* Explicitly add webkit prefixed keyframes */
+                                                        @-webkit-keyframes shine {
+                                                            0% {
+                                                                -webkit-transform: translateY(0);
+                                                                transform: translateY(0);
+                                                            }
+                                                            100% {
+                                                                -webkit-transform: translateY(200%);
+                                                                transform: translateY(200%);
+                                                            }
+                                                        }
+
+                                                        @-webkit-keyframes float {
+                                                            0% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+                                                            50% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+                                                            100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+                                                        }
+
+                                                        @keyframes float {
+                                                            0% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+                                                            50% { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+                                                            100% { -webkit-transform: translateY(0px); transform: translateY(0px); }
+                                                        }
+
+                                                        .floating {
+                                                            -webkit-animation: float 3s ease-in-out infinite;
+                                                            animation: float 3s ease-in-out infinite;
+                                                        }
+
+
+                                                        .chrome-text {
+                                                            position: relative;
+                                                            background: linear-gradient(to bottom, #ff00ff 0%, #9933ff 50%, #00ffff 100%);
+                                                            -webkit-background-clip: text;
+                                                            background-clip: text;
+                                                            color: transparent;
+                                                            font-family: "Press Start 2P", sans-serif;
+                                                            font-weight: bold;
+                                                            letter-spacing: 3px;
+                                                            white-space: nowrap;
+                                                        }
+
+                                                        .chrome-text::before {
+                                                            content: attr(data-text);
+                                                            position: absolute;
+                                                            left: 2px;
+                                                            top: 2px;
+                                                            text-shadow: 1px 1px #ff00ff;
+                                                            z-index: -1;
+                                                        }
 
         </style>
     </head>
@@ -252,7 +252,7 @@ will-change: transform;
             <div style="margin-top: 0rem">  
                 <p>Conversation takes a direct modeling approach that emphasizes speed and simplicity. Draw and modify geometry freely without wrestling with sketch constraints or complex feature trees. The straightforward interface lets you focus on designing rather than managing parameters.</p>
 
-                <P>Key capabilities:</p>
+                <P>Key features:</p>
                 <ul>
                     <li>Freeform 2D sketching with intuitive snap and alignment tools</li>
                     <li>Basic 3D operations (extrude, revolve, boolean operations)</li>
@@ -277,7 +277,21 @@ will-change: transform;
             <!--<img style="width: 100%" src="https://64.media.tumblr.com/9c482ecfcda309f629ac69168f2c22c2/tumblr_oh44bi2bp91vj2gx4o1_500.gif" alt="Description of the GIF"> -->
             <h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="P2PFL">P2PFL</h2><span class="chrome-text" style="margin: 0 20px" data-text="-">-</span><h2 class="chrome-text" style="font-size: 30px; display: inline-block" data-text="peer-to-peer model">peer-to-peer model</h2>
             <h2 class="chrome-text" style="font-size: 30px; margin-top: -0.5rem; margin-left: 2rem" data-text="training framework"> training framework</h2>
-            <p style="margin-top: 0rem">  P2PFL is a decentralized federated learning framework that enables distributed model training without centralizing data. Built with Go and PyTorch, it uses gRPC for peer-to-peer communication, supports custom models and datasets, and implements federated averaging for model aggregation. The framework includes peer discovery, configurable training cycles, and allows for scalable collaborative learning. </p>
+            <div style="margin-top: 0rem">  
+                <p>A decentralized federated learning framework that enables peer-to-peer model training without central coordination.</p>
+
+                <p>Key features:</p>
+                <ul>
+                    <li>Decentralized architecture using Go and PyTorch</li>
+                    <li>Automatic peer discovery and model distribution</li>
+                    <li>Support for custom models and datasets</li>
+                    <li>Built-in fault tolerance and scalability</li>
+                    <li>gRPC for efficient peer communication</li>
+                    <li>FedAvg algorithm for model aggregation</li>
+                </ul>
+
+                <p>Currently supports CNN architectures with plans to expand model support.</p>
+            </div>
         </div>
         <div class="glowing-box" style="margin-top: 2rem">
             <!--<div class="shine"> </div> -->
